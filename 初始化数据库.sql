@@ -1,5 +1,5 @@
 CREATE TABLE `manghui_query_datas`  (
-  `serverid` varchar(255) primary key,
+  `serverid` varchar(64) primary key,
   `data` mediumtext,
   `updatetime` bigint(10)
 );
