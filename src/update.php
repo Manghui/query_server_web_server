@@ -30,7 +30,7 @@ if(substr(md5(mysqli_fetch_array($result)["key"].mh_salt),8,16) != $serverKey){
 }
 $timestamp = strtotime("now");
 
-$sql = 'insert into `manghui_query_datas`(`serverid`,`data`,`updatetime`) VALUES("manghui_first","'.$data.'","'.$timestamp.'") ON DUPLICATE KEY UPDATE `data`="'.$data.'",`updatetime`='.$timestamp;
+$sql = 'insert into `manghui_query_datas`(`serverid`,`data`,`updatetime`) VALUES("'.$serverId.'","'.$data.'","'.$timestamp.'") ON DUPLICATE KEY UPDATE `data`="'.$data.'",`updatetime`='.$timestamp;
 $conn->query($sql);
 
 die(json_encode(array("success"=>true)));
