@@ -24,5 +24,6 @@ if(is_null($data)){
     die(json_encode(array("success"=>false, "reason"=>"Cannot get data from this server ID.")));
 }
 $data["updatetime"] = $result["updatetime"];
+$data["success"] = true;
 
 exit (json_encode($data));
